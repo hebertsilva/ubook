@@ -1,0 +1,50 @@
+{
+  "name": "nuxt-starter",
+  "version": "1.0.0",
+  "description": "Simple Nuxt stater project",
+  "author": "Herbert Silva",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate",
+    "test": "jest",
+    "lint": "eslint --fix --ext .js,.vue src"
+  },
+  "pre-commit": "lint",
+  "dependencies": {
+    "@nuxtjs/axios": "^5.9.3",
+    "@nuxtjs/style-resources": "^1.0.0",
+    "express": "^4.17.1",
+    "nuxt": "^2.11.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/runtime-corejs3": "^7.8.3",
+    "@nuxt/babel-preset-app": "^2.11.0",
+    "@nuxtjs/eslint-config": "^2.0.0",
+    "@vue/test-utils": "^1.0.0-beta.30",
+    "babel-eslint": "^10.0.3",
+    "babel-jest": "^24.9.0",
+    "core-js": "^3.6.4",
+    "dotenv": "^8.2.0",
+    "es6-promise": "^4.2.8",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-loader": "^3.0.3",
+    "eslint-plugin-html": "^6.0.0",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-jest": "^23.6.0",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "eslint-plugin-vue": "^6.1.2",
+    "jest": "^24.9.0",
+    "node-sass": "^4.13.0",
+    "pre-commit": "^1.2.2",
+    "sass-loader": "^8.0.2",
+    "vue-eslint-parser": "^7.0.0",
+    "vue-jest": "^3.0.5"
+  }
+}
