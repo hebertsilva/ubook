@@ -1,75 +1,94 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        nuxt-starter
-      </h1>
-      <h2 class="subtitle">
-        Simple Nuxt stater project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-    </div>
+  <div>
+    <empty-vue v-if="!isContacts" @updateDialog="handlerDialogFormContact" />
+    <list-vue
+      v-if="isContacts"
+      :contacts="contacts"
+      :highlight="newContactId"
+      :search="search"
+      @edit="showEditContact"
+      @remove="showRemoveContact"
+    />
+    <form-contact-vue
+      :contact="contact"
+      :dialog="dialog"
+      @updateDialog="handlerDialogFormContact"
+      @submitFormContact="handlerSubmitContact"
+    />
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import { mapState } from 'vuex'
+import EmptyVue from '@/components/home/Empty'
+import ListVue from '@/components/home/List'
+import FormContactVue from '@/components/home/FormContact'
 
 export default {
   components: {
-    Logo
+    EmptyVue,
+    ListVue,
+    FormContactVue
+  },
+  data: () => ({
+    contact: {}
+  }),
+  computed: {
+    ...mapState({
+      dialog: state => state.contacts.dialog,
+      contacts: state => state.contacts.data,
+      newContactId: state => state.contacts.newContactId,
+      search: state => state.contacts.search
+    }),
+    isContacts () {
+      return this.contacts.length
+    }
+  },
+  methods: {
+    handlerDialogFormContact (payload) {
+      this.$store.dispatch('contacts/updateDialog', payload)
+    },
+    async handlerSubmitContact (payload) {
+      if (this.dialog.update) {
+        await this.$store.dispatch('contacts/editContact', { payload })
+        this.showNotification('Atenção!', 'Contato editado com sucesso.')
+      } else {
+        this.$store.dispatch('contacts/addContact', { payload })
+      }
+
+      this.contact = {}
+    },
+    showEditContact (index) {
+      this.contact = this.contacts[index]
+
+      this.handlerDialogFormContact({
+        visible: true,
+        update: true
+      })
+    },
+    showRemoveContact (id) {
+      this.$confirm('Deseja realmente excluir o contato?', 'Excluir contato', {
+        confirmButtonText: 'Excluir',
+        cancelButtonText: 'Cancelar',
+        cancelButtonClass: 'el-button--text',
+        confirmButtonClass: 'el-button--danger is-round',
+        closeOnPressEscape: false,
+        closeOnClickModal: false,
+        showClose: false
+      }).then(() => {
+        this.$store.dispatch('contacts/removeContact', id)
+        this.showNotification('Atenção!', 'Contato deletado com sucesso.')
+      })
+    },
+    showNotification (title, message) {
+      this.$notify({
+        title,
+        message,
+        type: 'success',
+        position: 'bottom-right',
+        duration: 3000
+      })
+    }
   }
-  // async mounted () {
-  // const teste = await this.$api.example.example()
-  // }
 }
 </script>
-
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>

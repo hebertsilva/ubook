@@ -1,3 +1,5 @@
 export default async function (ctx) {
-  // empty
+  const { store } = ctx
+
+  await store.dispatch('contacts/getContacts')
 }

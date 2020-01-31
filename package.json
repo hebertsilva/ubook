@@ -1,7 +1,7 @@
 {
-  "name": "nuxt-starter",
+  "name": "ubook",
   "version": "1.0.0",
-  "description": "Simple Nuxt stater project",
+  "description": "Gerenciador de contatos Ubook",
   "author": "Herbert Silva",
   "private": true,
   "scripts": {
@@ -16,8 +16,11 @@
   "dependencies": {
     "@nuxtjs/axios": "^5.9.3",
     "@nuxtjs/style-resources": "^1.0.0",
+    "babel-plugin-component": "^1.1.1",
+    "element-ui": "^2.13.0",
     "express": "^4.17.1",
-    "nuxt": "^2.11.0"
+    "nuxt": "^2.11.0",
+    "v-mask": "^2.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.8.3",

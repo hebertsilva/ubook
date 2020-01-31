@@ -10,7 +10,17 @@ $path-image: '~/assets/img/';
 
 $palette-colors: (
   white100: #fff,
-  black100: #000
+  black100: #000,
+  black200: #2a2d3b,
+  gray100: #e1e1e1,
+  gray200: #f8f9fd,
+  gray300: #e4e7f4,
+  gray400: #9198af,
+  green100: #dbff90,
+  green200: #90d26c,
+  red100: #fa7268,
+  pink100: #fff3f2,
+  blue100: #c0c3d2
 );
 
 /*
@@ -31,8 +41,7 @@ $text-size: (
   title: 30px,
   large: 24px,
   medium: 20px,
-  small: 18px,
-  single: 16px,
+  small: 16px,
   base: 14px
 );
 
@@ -40,7 +49,7 @@ $text-size: (
   ## Fonts family
 */
 $fonts-family: (
-  1: ('Lato', sans-serif)
+  1: ('Roboto', sans-serif)
 );
 
 /*
