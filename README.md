@@ -2,6 +2,9 @@
 
 > Project for list contacts with functions the add, edit and remove.
 
+## Project starter
+This project is a template based on [Nuxt-starter](https://github.com/hebertsilva/nuxt-starter) developed by me to serve from Client side and Server side, in this project was developed only the client side
+
 ## Setup
 
 ``` bash
