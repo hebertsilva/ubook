@@ -77,6 +77,10 @@ export default {
     baseURL: envs.API_PROXY_BASE
   },
   loading: { color: '#fff' },
+  server: {
+    port: 3000,
+    host: '0.0.0.0'
+  },
   plugins: [
     '~/plugins/api',
     '~/plugins/element-ui',
