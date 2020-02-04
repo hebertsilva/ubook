@@ -22,6 +22,10 @@ const optionsBabel = {
   targets: { ie: 11 }
 }
 
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+  base: '/<repository-name>/'
+} : {}
+
 export default {
   serverMiddleware,
   mode: 'spa',
@@ -54,6 +58,7 @@ export default {
   },
 
   router: {
+    ...routerBase,
     middleware: 'stats',
     extendRoutes: (nuxtRoutes, resolve) => {
       nuxtRoutes.splice(0, nuxtRoutes.length, ...routes.map((route) => {
