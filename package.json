@@ -10,7 +10,8 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "test": "jest",
-    "lint": "eslint --fix --ext .js,.vue src"
+    "lint": "eslint --fix --ext .js,.vue src",
+    "heroku-postbuild": "npm run build"
   },
   "pre-commit": "lint",
   "dependencies": {
