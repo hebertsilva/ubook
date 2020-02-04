@@ -1,0 +1,34 @@
+// Custom button element-ui
+.el-button {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16);
+  border: solid 1px rgba(255, 255, 255, 0.16);
+  font-size: 14px;
+}
+
+.el-button--text {
+  box-shadow: none;
+  border: 0;
+  line-height: normal;
+  padding: 0;
+}
+
+.el-button--success {
+  background-color: map-get($palette-colors, green100);
+  color: map-get($palette-colors, red100);
+
+  &:hover {
+    background-color: darken(map-get($palette-colors, green100), 5%);
+    color: map-get($palette-colors, red100);
+    border-color: darken(map-get($palette-colors, green100), 5%);
+  }
+
+  &:active, &:focus {
+    background-color: darken(map-get($palette-colors, green100), 10%);
+    color: map-get($palette-colors, red100);
+    border-color: darken(map-get($palette-colors, green100), 10%);
+  }
+}
+
+.el-button--danger {
+  
+}

@@ -1,6 +1,9 @@
-# nuxt-starter
+# Ubook
 
-> Simple Nuxt stater project
+> Project for list contacts with functions the add, edit and remove.
+
+## Project starter
+This project is a template based on [Nuxt-starter](https://github.com/hebertsilva/nuxt-starter) developed by me to serve from Client side and Server side, in this project was developed only the client side
 
 ## Setup
 
@@ -18,19 +21,3 @@ $ yarn start
 # generate static project
 $ yarn generate
 ```
-
-# Environment variable
-
-Create file `.env` at project root
-
-```bash
-  SESSION_SECRET=<secret_token>
-  API_BASE=<url_api>
-  SITE_URL=<url_public_site>
-  APP_ID=<app_token>
-  APP_SECRET=<secret_token>
-```
-
-Set variablen in file `src/env.js`
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).

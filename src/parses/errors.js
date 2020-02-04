@@ -1,4 +1,3 @@
-// utils
 const isObject = (obj) => {
   const hasObject =
     obj !== null && typeof obj === 'object' && Array.isArray(obj) === false

@@ -70,3 +70,4 @@ yarn.lock
 
 # build generate script
 src/api.js
+dist/

@@ -1,0 +1,30 @@
+// Custom dialog element-ui
+.el-dialog, .el-message-box {
+  border-radius: 16px;
+  box-shadow: 0 16px 10px 0 rgba(0, 0, 0, 0.16);
+  padding-bottom: 0;
+
+  @include respond-to('small') {
+    width: calc(100% - 20px) !important;
+  }
+}
+
+.el-dialog__header, .el-message-box__header  {
+  border-bottom: 1px solid map-get($palette-colors, blue100);
+  padding: 15px 24px;
+  
+  .el-dialog__title, .el-message-box__title {
+    font-size: map-get($text-size, small);
+    color: map-get($palette-colors, black200);
+  }
+}
+
+.el-dialog__footer, .el-message-box__btns {
+  border-top: 1px solid map-get($palette-colors, blue100);
+  padding: 15px 24px;
+}
+
+.el-dialog__body, .el-message-box__content {
+  color: map-get($palette-colors, black200);
+  padding: 20px 24px;
+}
