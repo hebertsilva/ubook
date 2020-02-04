@@ -15,9 +15,7 @@
     "generate": "nuxt generate",
     "test": "jest",
     "lint": "eslint --fix --ext .js,.vue src",
-    "build:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt build",
-    "generate:gh-pages": "cross-env DEPLOY_ENV=GH_PAGES nuxt generate",
-    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
+    "heroku-postbuild": "npm run build"
   },
   "pre-commit": "lint",
   "dependencies": {
@@ -54,7 +52,6 @@
     "jest": "^24.9.0",
     "node-sass": "^4.13.0",
     "pre-commit": "^1.2.2",
-    "push-dir": "^0.4.1",
     "sass-loader": "^8.0.2",
     "vue-eslint-parser": "^7.0.0",
     "vue-jest": "^3.0.5"
