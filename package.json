@@ -28,7 +28,6 @@
     "element-ui": "^2.13.0",
     "express": "^4.17.1",
     "nuxt": "^2.11.0",
-    "push-dir": "^0.4.1",
     "v-mask": "^2.0.2"
   },
   "devDependencies": {
@@ -55,6 +54,7 @@
     "jest": "^24.9.0",
     "node-sass": "^4.13.0",
     "pre-commit": "^1.2.2",
+    "push-dir": "^0.4.1",
     "sass-loader": "^8.0.2",
     "vue-eslint-parser": "^7.0.0",
     "vue-jest": "^3.0.5"
