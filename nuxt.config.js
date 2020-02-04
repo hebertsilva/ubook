@@ -82,16 +82,10 @@ export default {
     baseURL: envs.API_PROXY_BASE
   },
   loading: { color: '#fff' },
-  server: {
-    port: 3000,
-    host: '0.0.0.0'
-  },
   plugins: [
     '~/plugins/api',
     '~/plugins/element-ui',
     '~/plugins/v-mask'
-  ],
-  buildModules: [
   ],
   build: {
     optimizeCSS: true,
@@ -104,20 +98,6 @@ export default {
       src: './src/api.js.template',
       dst: '../src/api.js'
     }],
-    extend (config, ctx) {
-      // Test
-      config.node = {
-        fs: 'empty'
-      }
-
-      if (ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          exclude: /(node_modules)/
-        })
-      }
-    },
     babel: {
       babelrc: true,
       presets ({ isServer }) {
@@ -125,9 +105,6 @@ export default {
           ['@nuxt/babel-preset-app', optionsBabel]
         ]
       }
-    },
-    transpile: [
-      'dotenv'
-    ]
+    }
   }
 }
